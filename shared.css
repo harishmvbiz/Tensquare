@@ -75,7 +75,7 @@
   --r:10px; --rl:18px; --rxl:26px;
   --shadow:0 18px 50px rgba(0,0,0,.40);
   --tr:all .26s cubic-bezier(.4,0,.2,1);
-  --maxw:1200px;
+  --maxw:1340px;
 }
 
 /* ---------- LIGHT THEME ---------- */
@@ -446,7 +446,7 @@ header.nav{position:sticky;top:0;z-index:100}
   background:var(--code-bg);border:1px solid var(--border);border-radius:10px;padding:13px;max-height:150px;overflow:auto;margin-bottom:14px}
 
 /* go to top */
-.gotop{position:fixed;right:18px;bottom:18px;z-index:140;width:50px;height:50px;border-radius:50%;
+.gotop{position:fixed;right:18px;bottom:84px;z-index:140;width:50px;height:50px;border-radius:50%;
   display:grid;place-items:center;color:#fff;background:var(--grad-main);
   box-shadow:0 12px 30px -6px rgba(31,59,214,.5);transition:var(--tr);opacity:0;visibility:hidden;transform:translateY(10px)}
 .gotop.show{opacity:1;visibility:visible;transform:translateY(0)}
@@ -531,6 +531,81 @@ footer.site{background:var(--footer-bg);border-top:1px solid var(--border);backd
 .notice{padding:14px 18px;border-radius:var(--rl);background:var(--glass-bg);border:1px solid var(--border-md);font-size:.86rem;color:var(--muted);display:flex;gap:11px;align-items:flex-start}
 .notice svg{width:18px;height:18px;color:var(--azure);flex:none;margin-top:1px}
 
+/* ---- social media handles (footer) ---- */
+.socials{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.socials a{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--azure);
+  background:var(--glass-bg-strong);border:1px solid var(--glass-stroke);transition:var(--tr)}
+.socials a svg{width:19px;height:19px}
+.socials a:hover{color:#fff;background:var(--grad-main);border-color:transparent;transform:translateY(-2px)}
+
+/* ---- service card icon (home) ---- */
+.scard-ic{width:58px;height:58px;border-radius:15px;display:grid;place-items:center;color:#fff;
+  background:var(--grad-deep);border:1px solid var(--glass-stroke-hi);margin-bottom:18px;
+  box-shadow:0 14px 30px -10px rgba(31,59,214,.55)}
+.scard-ic svg{width:28px;height:28px}
+
+/* ---- service visual tile (services hub) ---- */
+.svc-visual{position:relative;min-height:300px;display:grid;place-items:center;overflow:hidden}
+.svc-visual::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:36px;
+  background:var(--glass-bg-strong);border:1px solid var(--glass-stroke-hi);transform:rotate(45deg);
+  box-shadow:var(--glass-glow)}
+.svc-ic{position:relative;z-index:2;width:118px;height:118px;border-radius:30px;display:grid;place-items:center;
+  color:#fff;background:var(--grad-deep);box-shadow:0 22px 50px -14px rgba(31,59,214,.7)}
+.svc-ic svg{width:58px;height:58px}
+.svc-num{position:absolute;z-index:2;top:16%;right:18%;font-family:var(--font-d);font-weight:800;
+  font-size:clamp(2.4rem,5vw,3.6rem);color:var(--azure);opacity:.16;letter-spacing:-.04em}
+.svc-dot{position:absolute;border-radius:50%;background:var(--grad-azure);z-index:2}
+.svc-dot.d1{width:14px;height:14px;bottom:20%;left:20%;opacity:.8}
+.svc-dot.d2{width:9px;height:9px;top:24%;left:26%;opacity:.55}
+
+/* ---- founder card: fully centered ---- */
+.founder-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+
+/* ---- justified prose ---- */
+.prose.justify p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.bio-justify p{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+
+/* ===================== CHATBOT (Tensq) ===================== */
+.cbot-launch{position:fixed;right:18px;bottom:18px;z-index:148;display:flex;align-items:center;gap:10px;
+  padding:11px 18px 11px 13px;border-radius:30px;color:#fff;background:var(--grad-main);
+  box-shadow:0 14px 34px -8px rgba(47,166,240,.6);transition:var(--tr);cursor:pointer;border:none}
+.cbot-launch:hover{transform:translateY(-3px) scale(1.03)}
+.cbot-launch svg{width:22px;height:22px}
+.cbot-launch .cbot-lbl{font-family:var(--font-d);font-weight:700;font-size:.92rem;letter-spacing:.01em}
+.cbot-launch .pulse{position:absolute;top:-2px;right:-2px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.cbot-panel{position:fixed;right:18px;bottom:84px;z-index:149;width:min(380px,calc(100vw - 36px));
+  height:min(560px,calc(100vh - 130px));display:flex;flex-direction:column;
+  background:var(--surface-solid);border:1px solid var(--border-md);border-radius:var(--rl);
+  box-shadow:var(--glass-shadow);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(16px) scale(.97);transition:var(--tr)}
+.cbot-panel.open{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.cbot-head{padding:15px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);background:var(--grad-deep);color:#fff;flex:none}
+.cbot-head .av{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.16);flex:none}
+.cbot-head .av svg{width:24px;height:24px;color:#fff}
+.cbot-head .ct{font-family:var(--font-d);font-weight:800;font-size:1.02rem;line-height:1.1}
+.cbot-head .cs{font-size:.74rem;color:#C9DBFF;display:flex;align-items:center;gap:6px;margin-top:2px}
+.cbot-head .cs .live{width:7px;height:7px;border-radius:50%;background:#3BE37A;box-shadow:0 0 8px #3BE37A}
+.cbot-head .cx{margin-left:auto;color:#fff;opacity:.85;width:32px;height:32px;border-radius:8px;display:grid;place-items:center;background:rgba(255,255,255,.12);border:none;cursor:pointer}
+.cbot-head .cx:hover{opacity:1;background:rgba(255,255,255,.2)}
+.cbot-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:var(--bg)}
+.cbot-msg{max-width:84%;padding:11px 14px;border-radius:14px;font-size:.9rem;line-height:1.5}
+.cbot-msg.bot{align-self:flex-start;background:var(--glass-bg-strong);border:1px solid var(--glass-stroke);color:var(--body);border-bottom-left-radius:4px}
+.cbot-msg.user{align-self:flex-end;background:var(--grad-main);color:#fff;border-bottom-right-radius:4px}
+.cbot-quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.cbot-quick button{font-size:.82rem;padding:8px 13px;border-radius:18px;background:var(--glass-bg-strong);border:1px solid var(--border-md);color:var(--azure);cursor:pointer;transition:var(--tr)}
+.cbot-quick button:hover{border-color:var(--azure);background:rgba(47,166,240,.12);color:var(--head)}
+.cbot-foot{flex:none;padding:12px;border-top:1px solid var(--border);background:var(--bg-2);display:flex;gap:8px;align-items:flex-end}
+.cbot-foot textarea{flex:1;resize:none;min-height:42px;max-height:90px;padding:11px 13px;border-radius:12px;background:var(--btn-ghost-bg);border:1px solid var(--border-md);color:var(--head);font-family:inherit;font-size:.9rem;line-height:1.4}
+.cbot-foot textarea:focus{outline:none;border-color:var(--azure)}
+.cbot-foot .cbot-send{width:44px;height:44px;border-radius:12px;flex:none;display:grid;place-items:center;color:#fff;background:var(--grad-main);border:none;cursor:pointer;transition:var(--tr)}
+.cbot-foot .cbot-send:hover{transform:translateY(-2px)}
+.cbot-foot .cbot-send svg{width:19px;height:19px}
+.cbot-note{font-size:.68rem;color:var(--muted);text-align:center;padding:0 12px 9px;background:var(--bg-2)}
+@media (max-width:480px){
+  .cbot-launch .cbot-lbl{display:none}
+  .cbot-launch{padding:13px;border-radius:50%}
+  .cbot-panel{right:12px;left:12px;width:auto;bottom:78px;height:min(70vh,520px)}
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
@@ -557,11 +632,11 @@ footer.site{background:var(--footer-bg);border-top:1px solid var(--border);backd
   .stat .n{font-size:1.9rem}
 }
 @media (min-width:1700px){
-  :root{--maxw:1340px}
+  :root{--maxw:1500px}
   html{font-size:calc(17px * var(--a11y-fs))}
 }
 @media (min-width:2200px){
-  :root{--maxw:1480px}
+  :root{--maxw:1680px}
   html{font-size:calc(18px * var(--a11y-fs))}
 }
 

@@ -117,6 +117,29 @@ Until you do this, the form still works for visitors but shows a polite "demo" m
 
 ---
 
+## 6b. Social media handles (footer)
+
+The footer on every page now shows social icons: **LinkedIn, Facebook, Instagram, X (Twitter)** and **WhatsApp**. The WhatsApp link is real (it points to +61 431 533 623). The others currently use **placeholder addresses** that you should update to your real profiles:
+
+| Network | Placeholder in the files | Replace with |
+|---|---|---|
+| LinkedIn | `linkedin.com/company/tensquare-accounting-tax` | your LinkedIn page |
+| Facebook | `facebook.com/tensquareaccounting` | your Facebook page |
+| Instagram | `instagram.com/tensquareaccounting` | your Instagram handle |
+| X (Twitter) | `x.com/tensquare_au` | your X handle |
+
+Update them the same way as the form key (§9, "Replace in Files"). If you don't use a network, simply delete that one `<a ...>...</a>` line from the footer. The footer is generated for every page, so a find-and-replace updates them all at once.
+
+## 6c. The "Tensq" chatbot
+
+Every page has a floating **"Chat with Tensq"** assistant (bottom-right). Tensq greets visitors, offers quick options (services, book a consultation, tax question, talk to a human), and can **capture a lead** — it collects the visitor's name, email and enquiry in a friendly conversation.
+
+- **Right now (demo mode):** Tensq runs entirely in the browser. When someone completes the mini-form, it shows a confirmation and a note that it isn't connected yet. Nothing is lost — visitors are also given your WhatsApp, email and contact-page links.
+- **To make it deliver leads to your inbox:** Tensq uses the **same Web3Forms key** as the contact form. As soon as you complete §6 (replace `YOUR_WEB3FORMS_ACCESS_KEY`), Tensq's captured leads are emailed to you automatically, with the subject line "Tensq chatbot lead". No extra setup.
+- **Later upgrade (optional):** if you ever want a smarter, AI-powered bot, the launcher and panel are already built — a developer can connect it to a chatbot service without changing the design. The `SITE_CONTEXT.md` file explains exactly where the chatbot lives in the code.
+
+---
+
 ## 7. Replace the sample testimonials with real ones
 
 To stay honest and compliant, the **Client Stories** page uses clearly-labelled **"Sample"** testimonials — they are *not* presented as real reviews. Replace them as you collect genuine, consented feedback.
