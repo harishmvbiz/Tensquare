@@ -606,6 +606,62 @@ footer.site{background:var(--footer-bg);border-top:1px solid var(--border);backd
   .cbot-panel{right:12px;left:12px;width:auto;bottom:78px;height:min(70vh,520px)}
 }
 
+/* ===================== "RIGHT PLACE" QUALIFIER (home) ===================== */
+.rp{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,3.5vw,48px);border-radius:var(--rxl);
+  padding:clamp(26px,3.5vw,46px);align-items:start}
+.rp-side h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin:8px 0 10px}
+.rp-side p{color:var(--muted);font-size:.95rem;max-width:42ch}
+.rp-progress{margin-top:24px}
+.rp-bar{display:block;height:7px;border-radius:6px;background:var(--glass-bg-strong);overflow:hidden;border:1px solid var(--glass-stroke)}
+.rp-bar i{display:block;height:100%;width:33%;border-radius:6px;background:var(--grad-main);transition:width .45s cubic-bezier(.4,0,.2,1)}
+.rp-step-label{display:inline-block;margin-top:10px;font-family:var(--font-m);font-size:.72rem;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.rp-main{position:relative;min-height:280px}
+.rp-panel{animation:rpIn .4s ease}
+.rp-panel[hidden]{display:none}
+@keyframes rpIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rp-guide{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:22px;background:var(--grad-main);
+  color:#fff;font-family:var(--font-d);font-weight:700;font-size:.83rem;margin-bottom:18px;
+  box-shadow:0 10px 24px -8px rgba(47,166,240,.6);animation:rpFloat 1.7s ease-in-out infinite}
+.rp-guide svg{width:16px;height:16px;transform:rotate(90deg);animation:rpNudge 1.7s ease-in-out infinite}
+@keyframes rpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes rpNudge{0%,100%{transform:rotate(90deg) translateX(0)}50%{transform:rotate(90deg) translateX(4px)}}
+.rp-q{font-size:1.2rem;margin-bottom:16px}
+.rp-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rp-opt{display:flex;align-items:center;gap:10px;text-align:left;padding:14px 15px;border-radius:13px;
+  background:var(--glass-bg-strong);border:1px solid var(--border-md);color:var(--head);font-size:.92rem;
+  font-weight:500;cursor:pointer;transition:var(--tr);font-family:inherit}
+.rp-opt svg{width:19px;height:19px;color:var(--azure);flex:none}
+.rp-opt:hover{border-color:var(--azure);transform:translateY(-2px);box-shadow:var(--glass-glow)}
+.rp-opt.sel{border-color:var(--azure);background:rgba(47,166,240,.14);box-shadow:0 0 0 2px var(--azure) inset}
+.rp-opt.sel.bad{border-color:var(--gold);background:rgba(232,179,11,.14);box-shadow:0 0 0 2px var(--gold) inset}
+.rp-opt.sel.bad svg{color:var(--gold)}
+.rp-feedback{margin-top:16px;font-size:.9rem;border-radius:12px;max-height:0;padding:0 15px;overflow:hidden;
+  line-height:1.55;transition:max-height .35s ease,padding .35s ease}
+.rp-feedback.show{padding:13px 15px;max-height:220px}
+.rp-feedback.ok{background:rgba(59,227,122,.12);border:1px solid rgba(59,227,122,.4);color:var(--head)}
+.rp-feedback.no{background:rgba(232,179,11,.12);border:1px solid rgba(232,179,11,.4);color:var(--head)}
+.rp-nav{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.rp-nav.center{justify-content:center}
+.rp-back svg{transform:rotate(180deg)}
+.btn.rp-pulse{animation:rpPulse 1.5s infinite}
+@keyframes rpPulse{0%{box-shadow:0 0 0 0 rgba(47,166,240,.5)}70%{box-shadow:0 0 0 12px rgba(47,166,240,0)}100%{box-shadow:0 0 0 0 rgba(47,166,240,0)}}
+.rp-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rp-fields .field:last-child{grid-column:1 / -1}
+.rp-confirm{display:flex;align-items:center;gap:10px;padding:13px 15px;border-radius:12px;margin-bottom:18px;
+  background:rgba(59,227,122,.1);border:1px solid rgba(59,227,122,.35);font-size:.9rem;color:var(--head)}
+.rp-confirm svg{width:18px;height:18px;color:#3BE37A;flex:none}
+.rp-done{text-align:center;padding:18px 0}
+.rp-done-ic{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;color:#fff;
+  background:linear-gradient(135deg,#3BE37A,#16B45A);box-shadow:0 16px 36px -10px rgba(59,227,122,.6)}
+.rp-done-ic svg{width:34px;height:34px}
+.rp-done h3{font-size:1.5rem;margin-bottom:8px}
+.rp-done p{color:var(--muted);max-width:48ch;margin:0 auto}
+@media (max-width:860px){
+  .rp{grid-template-columns:1fr}
+  .rp-options{grid-template-columns:1fr}
+  .rp-fields{grid-template-columns:1fr}
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
