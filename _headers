@@ -5,11 +5,14 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   X-XSS-Protection: 1; mode=block
 
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /shared.css
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=0, must-revalidate
 
 /*.png
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=86400
 
 /*.vcf
   Content-Type: text/vcard; charset=utf-8
